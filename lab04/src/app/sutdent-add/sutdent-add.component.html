@@ -1,0 +1,48 @@
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h5>First Name Student</h5>
+            <input type="text" class="form-control" required placeholder="First name" aria-label="First name" [(ngModel)]="student.FirstName">
+        </div>
+        <div class="col">
+            <h5>Last Name Student</h5>
+            <input type="text" class="form-control" required placeholder="Last name" aria-label="Last name" [(ngModel)]="student.LastName">
+        </div>
+        <div class="col">
+            <h5>Age Student</h5>
+            <input type="text" class="form-control" required placeholder="Age" aria-label="Age" [(ngModel)]="student.Age">
+        </div>
+        <div class="col">
+            <h5>City</h5>
+            <input type="text" class="form-control" required placeholder="City" aria-label="City" [(ngModel)]="student.City">
+        </div>
+        <div class="col">
+            <h5>Date of Birth</h5>
+            <input type="text" class="form-control" required placeholder="Birth Day" aria-label="Birth Day" [(ngModel)]="student.date">
+        </div>
+    </div>
+    <button type="button" class="btn btn-outline-primary" (click)="addStudent()" [disabled]="student.date==''">Add Student</button>
+    <button type="button" class="btn btn-outline-danger" (click)="refesh()">Refesh</button>
+    <!-- <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Number of Student</th>
+                <th scope="col">First Name</th>
+                <th scope="col">Last Name</th>
+                <th scope="col">Age</th>
+                <th scope="col">City</th>
+                <th scope="col">Birth Day</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let add of ListStudent; let i = index">
+                <th scope="row">{{i+1}}</th>
+                <td>{{add.FirstName}}</td>
+                <td>{{add.LastName}}</td>
+                <td>{{add.Age}}</td>
+                <td>{{add.City}}</td>
+                <td>{{add.date}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div> -->

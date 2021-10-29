@@ -1,0 +1,28 @@
+<app-add-form (addEvent)=addArray($event)></app-add-form>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Content</th>
+            <th scope="col">Type</th>
+            <th scope="col">Ping</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let add of listServer">
+            <td>
+                {{add.serverName}}
+            </td>
+            <td>
+                {{add.content}}
+            </td>
+            <td>
+                {{add.Type}}
+            </td>
+            <td>
+                {{add.ping}}
+            </td>
+        </tr>
+
+    </tbody>
+</table>

@@ -1,0 +1,29 @@
+<p>Count : {{count}}</p>
+<button (click)="Count()">Count</button>
+<br>
+<input type="text" [(ngModel)]="email">
+<input type="number" [(ngModel)]="phone">
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Number</th>
+            <th scope="col">Image</th>
+            <th scope="col">Product Name</th>
+            <th scope="col">Product Code</th>
+            <th scope="col">Price</th>
+            <th scope="col">Rating</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let prod of products; let i= index">
+            <th scope="row">{{i+1}}</th>
+            <td><img src="{{prod.imageUrl}}" width="50px"></td>
+            <td>{{prod.productName}}</td>
+            <td>{{prod.productCode}}</td>
+            <td>{{prod.price}}</td>
+            <td>
+                <app-star [starRating]="prod.starRating"></app-star>
+            </td>
+        </tr>
+    </tbody>
+</table>

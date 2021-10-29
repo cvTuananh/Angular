@@ -1,0 +1,41 @@
+<div class="card-header text-white bg-dark mb-3">
+    Quan Ly Danh Muc San Pham
+</div>
+<div class="card-body">
+    <h4>Ma Sp</h4>
+    <input type="text" class="form-control" placeholder="maSp" [(ngModel)]="products.maSp">
+    <h4>Ten Sp</h4>
+    <input type="text" class="form-control" placeholder="tenSP" [(ngModel)]="products.tenSp">
+    <h4>Gia Sp</h4>
+    <input type="text" class="form-control" placeholder="gia" [(ngModel)]="products.gia">
+</div>
+<button type="button" class="btn btn-primary" (click)="addProduct()">Add Product</button>
+
+<div class="card-header text-white bg-dark mb-3">
+    Danh Mục Sản Phẩm
+</div>
+<div class="card-body">
+    <table class="table table-success table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Number</th>
+                <th scope="col">MaSp</th>
+                <th scope="col">TenSP</th>
+                <th scope="col">GiaSP</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let add of listProduct | paginate: {itemsPerPage: 5,
+            currentPage: page,
+            totalItems: toalLength};let i = index">
+                <th scope="row">{{i+1}}</th>
+                <td>{{add.maSp}}</td>
+                <td>
+                    <a href="product-detail/{{add.maSp}}">{{add.tenSp}}</a></td>
+                <td>{{add.gia}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <pagination-controls (pageChange)="page = $event" class="text-center"></pagination-controls>
+
+</div>

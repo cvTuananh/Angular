@@ -1,0 +1,23 @@
+<app-sutdent-add (Addstudents)=AddStudents($event)></app-sutdent-add>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Number of Student</th>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">Age</th>
+            <th scope="col">City</th>
+            <th scope="col">Birth Day</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let add of ListStudent; let i = index">
+            <th scope="row">{{i+1}}</th>
+            <td>{{add.FirstName}}</td>
+            <td>{{add.LastName}}</td>
+            <td>{{add.Age}}</td>
+            <td>{{add.City}}</td>
+            <td>{{add.date}}</td>
+        </tr>
+    </tbody>
+</table>

@@ -1,0 +1,48 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Number</th>
+            <th scope="col">id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Price</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let add of data | paginate: { itemsPerPage: 4, currentPage: page, totalItems:toalLength }; let i = index">
+            <th scope="row">{{i+1}}</th>
+            <td>{{add.id}}</td>
+            <td>{{add.name}}</td>
+            <td>{{add.price}}</td>
+        </tr>
+        <pagination-controls (pageChange)="page = $event"></pagination-controls>
+    </tbody>
+</table>
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" href="product/new">
+    Launch demo modal
+  </button>
+<!-- <a href="product/new" class="btn btn-primary">Addd</a> -->
+<router-outlet></router-outlet>
+<!-- Button trigger modal -->
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Add Product</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <h5>ID Product</h5>
+                <input type="text" required placeholder="ID Product" [(ngModel)]="product.id">
+                <h5>Name Product</h5>
+                <input type="text" required placeholder="ID Product" [(ngModel)]="product.name">
+                <h5>Price Product</h5>
+                <input type="text" required placeholder="ID Product" [(ngModel)]="product.price">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,14 @@
+<h5>ServerName</h5>
+<input type="text" [(ngModel)]="sever.name">
+<h5>Content</h5>
+<input type="text" [(ngModel)]="sever.content">
+<h5>Type</h5>
+<input type="text" [(ngModel)]="sever.type">
+<button type="button" class="btn btn-primary" (click)="addArray()">Add Server</button>
+<button type="button" class="btn btn-primary" (click)="addArray('Blue')">Add Server Blue</button>
+<div class="card-header" [ngStyle]="{color:sever.type=='server' ? 'red' : 'blue'}">
+    Server Name
+</div>
+<div class="card-body" *ngFor="let server of listServer">
+    {{server.name}} {{server.content}}
+</div>
